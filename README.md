@@ -1,145 +1,116 @@
-🚧 Near Miss Safety Dashboard
+# 🚧 Near Miss Safety Dashboard
 
-An interactive data visualization dashboard built to analyze Near Miss incidents in a construction/worksite environment. This project transforms a real-world safety dataset into meaningful insights through charts, KPIs, and trend analysis.
+An interactive data visualization dashboard built to analyze **Near Miss incidents** in construction and worksite environments. This project transforms a real-world safety dataset of approximately 7,800 records into meaningful insights through dynamic charts, KPIs, and trend analysis.
 
-📌 Project Objective
+---
 
-This project was developed to demonstrate the ability to:
+## 📌 Project Objective
 
-Work with a real-world structured dataset (~7,800 records)
+This project demonstrates the ability to bridge domain expertise in industrial safety with modern software development practices:
 
-Build a stable and interactive dashboard
+- **Data Wrangling:** Processing and cleaning a large-scale (~7,800 records) structured JSON dataset.
+- **Stability & Resilience:** Implementing defensive data handling to manage missing, null, or inconsistent values without application crashes.
+- **Actionable Insights:** Visualizing safety patterns to help organizations identify risks before they turn into accidents.
+- **UX/UI Design:** Delivering a clean, responsive, and professional interface suitable for safety officers and management.
 
-Visualize safety trends and risk patterns
+> **What is a Near Miss?**
+> A Near Miss is an unplanned event that did not result in injury, illness, or damage—but had the potential to do so. Examples include a worker slipping but regaining balance, or a tool falling from height but missing bystanders.
 
-Handle incomplete and inconsistent data gracefully
+---
 
-Deliver a clean, readable, and responsive user interface
+## 🛠 Tech Stack
 
-📊 What is a Near Miss?
+| Layer           | Technology                      |
+| :-------------- | :------------------------------ |
+| **Frontend**    | React (Vite)                    |
+| **Charts**      | Chart.js + react-chartjs-2      |
+| **Language**    | JavaScript (ES6+)               |
+| **Styling**     | Responsive CSS / Inline Layouts |
+| **Data Source** | Static JSON Dataset             |
 
-A Near Miss is an unplanned event that could have resulted in injury, damage, or loss — but did not, due to chance or timely intervention.
+---
 
-Examples:
+## ✨ Features
 
-A worker slips but regains balance
+### 📈 Data Visualizations (5+ Charts)
 
-A falling tool narrowly misses someone
+- **Monthly Near Miss Trend (Line Chart):** Tracks incident frequency over time to identify seasonal risks.
+- **Incidents by Primary Category (Bar Chart):** Highlights the most common hazard types (e.g., Electrical, Fall Risk).
+- **Severity Level Distribution (Pie Chart):** Segregates incidents into Low, Moderate, High, and Critical risk levels.
+- **Unsafe Condition vs. Behavior (Donut Chart):** Distinguishes between environmental risks and human actions.
+- **Incidents by Location (Horizontal Bar Chart):** Pinpoints high-risk work zones within the site.
 
-A vehicle stops just before a collision
+### 📌 KPI Summary Cards
 
-Analyzing near misses helps organizations identify risk patterns and prevent future accidents.
+Located at the top for immediate high-level insights:
 
-🛠 Tech Stack
-Layer Technology
-Frontend React (Vite)
-Charts Chart.js + react-chartjs-2
-Language JavaScript (ES6+)
-Styling Inline CSS (responsive layout)
-Data Source Static JSON dataset
-✨ Features
-📈 Data Visualizations (5+ Charts)
+- **Total Near Miss Incidents**
+- **High & Critical Severity Count**
+- **Most Common Hazard Category**
+- **Top Incident Location**
 
-Monthly Near Miss Trend (Line Chart)
-Shows how incident frequency changes over time.
+---
 
-Incidents by Primary Category (Bar Chart)
-Highlights the most common hazard types.
+## 🧠 Data Handling & Stability
 
-Severity Level Distribution (Pie Chart)
-Groups incidents into Low, Moderate, High, and Critical risk levels.
+Real-world safety data is often messy. This dashboard uses a robust processing utility (`dataProcessing.js`) to ensure the UI remains stable even with imperfect data.
 
-Unsafe Condition vs Behavior (Donut Chart)
-Distinguishes between environmental risks and human behavior risks.
+| Issue                  | Handling Strategy                           |
+| :--------------------- | :------------------------------------------ |
+| **Missing Fields**     | Replaced with `"Unknown"`                   |
+| **Empty Strings**      | Treated as missing values                   |
+| **Null/Undefined**     | Safely defaulted to prevent runtime errors  |
+| **Invalid Timestamps** | Filtered out from time-based trend analysis |
+| **Unexpected Values**  | Grouped into an `"Other/Unknown"` category  |
 
-Incidents by Location (Horizontal Bar Chart)
-Identifies high-risk work areas.
+---
 
-📌 KPI Summary Cards
+## ⚙️ Setup Instructions
 
-Displayed at the top of the dashboard:
+1.  **Clone the Repository**
 
-Total Near Miss Incidents
+    ```bash
+    git clone <your-repo-link>
+    cd dashboard
+    ```
 
-High & Critical Severity Incidents
+2.  **Install Dependencies**
 
-Most Common Hazard Category
+    ```bash
+    npm install
+    ```
 
-Most Common Incident Location
+3.  **Run the Development Server**
+    ```bash
+    npm run dev
+    ```
+    _Open the local URL provided (usually `http://localhost:5173`) in your browser._
 
-These provide quick, high-level safety insights.
+---
 
-🧠 Data Handling & Stability
+## 📁 Project Structure
 
-Real-world datasets often contain missing or inconsistent values. The dashboard includes defensive data handling to ensure stability and prevent crashes.
-
-✅ Assumptions & Data Cleaning Rules
-Issue Handling Strategy
-Missing fields Replaced with "Unknown"
-Empty strings Treated as missing values
-Null/undefined values Safely defaulted
-Invalid timestamps Ignored in time-based charts
-Unexpected severity levels Categorized as "Unknown"
-Non-array dataset App defaults to empty state
-
-All charts gracefully display “No data available” if inputs are invalid.
-
-⚙️ Setup Instructions
-1️⃣ Clone the Repository
-git clone <your-repo-link>
-cd dashboard
-
-2️⃣ Install Dependencies
-npm install
-
-3️⃣ Run the Development Server
-npm run dev
-
-Open the local URL shown in the terminal (usually http://localhost:5173
-).
-
-📁 Project Structure
+```text
 src/
-│
 ├── components/
-│ ├── charts/ # Reusable chart components
-│ └── layout/ # KPI cards and layout components
-│
+│   ├── charts/        # Reusable Chart.js components
+│   └── layout/        # KPI cards and structural components
 ├── data/
-│ └── nearMissData.json
-│
+│   └── nearMissData.json
 ├── utils/
-│ └── dataProcessing.js # Data grouping & cleaning logic
-│
+│   └── dataProcessing.js # Logic for cleaning and grouping JSON data
 ├── App.jsx
 └── main.jsx
 
-📊 Evaluation Alignment
-
-This dashboard satisfies the key assessment requirements:
-
-✔ Loads and processes a real-world JSON dataset
-
-✔ Includes 5+ meaningful visualizations
-
-✔ Provides interactive charts with tooltips
-
-✔ Handles missing and inconsistent data safely
-
-✔ Delivers a clean, structured, and readable UI
-
 🚀 Future Improvements
+Live Filtering: Add date pickers and category dropdowns to filter charts dynamically.
 
-Filters by date, region, or severity
+Data Export: Enable users to export chart views as PDF or CSV reports.
 
-Export charts as images or reports
+Backend Integration: Move from a static JSON file to a live MongoDB/Node.js backend.
 
-Backend API integration
-
-AI-powered question answering on safety data
+AI Integration: Implement an LLM-based "Safety Assistant" to query the data via natural language.
 
 👤 Author
-
-Harshit Shrivastava
-B.Tech Petroleum Engineering, IIT (ISM) Dhanbad
-Aspiring Software Developer | Data & Safety Analytics Enthusiast
+Harshit Shrivastava B.Tech Petroleum Engineering, IIT (ISM) Dhanbad Aspiring Software Developer | Data & Safety Analytics Enthusiast
+```
