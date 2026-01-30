@@ -118,7 +118,3 @@ AI Integration: Implement an LLM-based "Safety Assistant" to query the data via 
 
 Harshit Shrivastava B.Tech Petroleum Engineering,
 IIT (ISM) Dhanbad Aspiring Software Developer | Data & Safety Analytics Enthusiast
-
-```
-
-```
