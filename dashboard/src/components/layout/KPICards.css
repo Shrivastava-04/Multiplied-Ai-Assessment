@@ -1,0 +1,30 @@
+.kpi-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.kpi-card {
+  flex: 1;
+  min-width: 220px;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.kpi-total { background: #2563EB; }
+.kpi-critical { background: #EF4444; }
+.kpi-category { background: #F59E0B; }
+.kpi-location { background: #16A34A; }
+
+.kpi-card h3 {
+  margin-bottom: 10px;
+}
+
+.kpi-card p {
+  font-size: 26px;
+  font-weight: bold;
+}
