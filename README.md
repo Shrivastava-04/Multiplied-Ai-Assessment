@@ -102,7 +102,10 @@ src/
 ├── App.jsx
 └── main.jsx
 
-🚀 Future Improvements
+```
+
+## 🚀 Future Improvements
+
 Live Filtering: Add date pickers and category dropdowns to filter charts dynamically.
 
 Data Export: Enable users to export chart views as PDF or CSV reports.
@@ -111,6 +114,11 @@ Backend Integration: Move from a static JSON file to a live MongoDB/Node.js back
 
 AI Integration: Implement an LLM-based "Safety Assistant" to query the data via natural language.
 
-👤 Author
-Harshit Shrivastava B.Tech Petroleum Engineering, IIT (ISM) Dhanbad Aspiring Software Developer | Data & Safety Analytics Enthusiast
+## 👤 Author
+
+Harshit Shrivastava B.Tech Petroleum Engineering,
+IIT (ISM) Dhanbad Aspiring Software Developer | Data & Safety Analytics Enthusiast
+
+```
+
 ```
